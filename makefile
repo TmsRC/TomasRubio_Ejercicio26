@@ -1,13 +1,13 @@
-rk4.png: %.dat
+resultados.png: %.dat
 	python graficar.py
 
-all: rk4_01.dat rk4_1.dat rk4_001.dat
+all: euler.dat rk4.dat leapfrog.dat
 
-%.dat: RungeKutta.x
-	./RungeKutta.x
+%.dat: solucionar.x
+	./solucionar.x
     
-RungeKutta.x: RungeKutta.cpp
-	c++ RungeKutta.cpp -o RungeKutta.x
+solucionar.x: solucionar.cpp
+	c++ solucionar.cpp -o solucionar.x
 
 clean:
 	rm -rf *.x *.dat
